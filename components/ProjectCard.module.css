@@ -1,0 +1,62 @@
+.section { padding-block: 0 var(--space-40); }
+
+.eyebrow { margin: 0 0 var(--space-4); }
+.title { font-size: var(--type-display-l); line-height: 1; }
+.intro { margin: var(--space-6) 0 var(--space-12); max-width: 52ch; color: var(--ink-muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+/* Subgrid lines up each card's six rows, so titles, numbers and chips align across the set. */
+.card {
+  display: grid;
+  grid-row: span 6;
+  grid-template-rows: subgrid;
+  row-gap: var(--space-3);
+  padding: var(--space-6);
+  transition: border-color .2s;
+}
+.card:hover { border-color: var(--ink); }
+
+.name { font-size: 22px; }
+.pitch { font-size: var(--type-data); color: var(--ink-muted); }
+
+.stat {
+  display: grid;
+  align-content: start;
+  gap: var(--space-1);
+  margin: 0;
+  padding-top: var(--space-3);
+}
+.value { font-size: 36px; }
+.statLabel { color: var(--ink-muted); }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links { display: flex; gap: var(--space-4); margin: 0; }
+.links a { color: var(--gold-ink); text-decoration: none; }
+.links a:hover { text-decoration: underline; }
+
+@media (max-width: 999px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 767px) {
+  .section { padding-block: 0 var(--space-24); }
+  .title { font-size: calc(var(--type-display-l) * .8); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+}

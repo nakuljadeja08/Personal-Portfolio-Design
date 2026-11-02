@@ -1,0 +1,74 @@
+.run { flex: 1.6 1 420px; padding: var(--space-6); }
+.prs { flex: 1 1 260px; padding: var(--space-6); }
+
+.heading { margin: 0; }
+.muted { color: var(--ink-muted); }
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.readout { margin: 0 0 var(--space-2); color: var(--ink-muted); }
+
+.bars {
+  display: flex;
+  align-items: stretch;
+  height: 96px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+}
+/* Each column is the whole hover target, so short bars are as easy to hit as tall ones. */
+.bars li {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  padding-inline: 1px;
+}
+.bar {
+  display: block;
+  width: 100%;
+  min-height: 2px;
+  background: var(--ink);
+  transform-origin: bottom;
+  transition: opacity .15s;
+}
+.bar[data-current="true"] { background: var(--gold); }
+.bar[data-faded="true"] { opacity: .35; }
+
+.axis {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--space-1) 0 0;
+}
+
+.lineage {
+  margin: var(--space-4) 0 0;
+  letter-spacing: .04em;
+  text-transform: none;
+}
+.note { margin: var(--space-1) 0 0; color: var(--ink-muted); }
+
+.prList { list-style: none; margin: var(--space-3) 0 0; padding: 0; }
+.prList li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 var(--space-3);
+  padding-block: var(--space-2);
+  border-top: 1px solid var(--line);
+}
+.prList b { font-weight: 500; }
+.prDate {
+  grid-column: 1 / -1;
+  font-size: var(--type-label);
+  color: var(--ink-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar { transition: none; }
+}

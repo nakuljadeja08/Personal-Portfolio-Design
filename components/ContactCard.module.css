@@ -1,0 +1,91 @@
+/* The only full-bleed navy on the page, so it reads as the end of the match. */
+.section {
+  background: var(--navy);
+  color: var(--on-navy);
+}
+.section :focus-visible { outline-color: var(--gold); }
+.section a:hover { color: var(--on-navy); }
+
+.inner { padding-block: var(--space-24); }
+
+.eyebrow { margin: 0 0 var(--space-4); color: var(--on-navy); opacity: .8; }
+.title { font-size: var(--type-display-l); line-height: 1; }
+.body {
+  margin: var(--space-6) 0 0;
+  max-width: 52ch;
+  font-size: var(--type-body-l);
+  line-height: 1.55;
+}
+
+.mail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin: var(--space-8) 0 0;
+}
+.address {
+  font-family: var(--font-mono);
+  font-size: var(--type-body-l);
+  text-underline-offset: var(--space-1);
+}
+.copy {
+  min-height: 28px;
+  background: none;
+  border-color: var(--on-navy);
+  color: var(--on-navy);
+  cursor: pointer;
+}
+.copy:hover { background: var(--on-navy); color: var(--navy); }
+
+.picker { margin: var(--space-8) 0 0; padding: 0; border: 0; }
+.legend { padding: 0; color: var(--on-navy); opacity: .8; }
+
+.segment {
+  display: inline-flex;
+  margin-top: var(--space-2);
+  border: 1px solid var(--on-navy);
+}
+.option { position: relative; cursor: pointer; }
+.option input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.option span {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--type-data);
+}
+.option input:checked + span { background: var(--on-navy); color: var(--navy); }
+.option input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.note { margin: var(--space-2) 0 0; }
+
+.download {
+  display: inline-block;
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--gold);
+  color: var(--on-gold);
+  font-size: var(--type-data);
+  font-weight: 700;
+  text-decoration: none;
+}
+.section .download:hover { color: var(--on-gold); filter: brightness(1.05); }
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+  margin: var(--space-8) 0 0;
+}
+.social span { opacity: .8; }
+
+@media (max-width: 767px) {
+  .title { font-size: calc(var(--type-display-l) * .8); }
+  .address { font-size: var(--type-body); }
+}

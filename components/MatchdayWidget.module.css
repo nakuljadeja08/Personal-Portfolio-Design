@@ -1,0 +1,37 @@
+.card {
+  display: flex;
+  flex: 1 1 320px;
+  flex-direction: column;
+  padding: var(--space-6);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-4);
+}
+.top b { font-weight: 500; }
+
+.teams {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin: 0;
+}
+.teams :global(.nl-title) { font-size: 20px; }
+.vs { color: var(--ink-muted); }
+.score { font-size: 28px; }
+
+.when { margin: var(--space-3) 0 0; color: var(--ink-muted); }
+.when b { color: var(--gold-ink); font-weight: 500; white-space: nowrap; }
+.venue { display: block; }
+
+/* Pinned to the bottom, so the card lines up with the chart beside it. */
+.footer {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  font-size: var(--type-data);
+  color: var(--ink-muted);
+}

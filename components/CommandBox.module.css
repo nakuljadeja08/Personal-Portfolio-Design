@@ -1,0 +1,106 @@
+/* Sits above the fixed 40px ticker. */
+.trigger,
+.box {
+  position: fixed;
+  right: var(--space-4);
+  z-index: 35;
+}
+
+.trigger {
+  bottom: calc(40px + var(--space-4));
+  height: 40px;
+  padding: 0 var(--space-3);
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+}
+.trigger:hover { border-color: var(--ink); }
+
+.prompt { color: var(--gold-ink); font-weight: 700; }
+
+.box {
+  bottom: calc(40px + var(--space-4) + 40px + var(--space-2));
+  width: min(480px, calc(100vw - 2 * var(--space-4)));
+  box-shadow: var(--shadow-float);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+.hint { margin-left: auto; }
+.close {
+  padding: 0;
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.close:hover { color: var(--gold-ink); }
+
+.log {
+  min-height: 128px;
+  max-height: 40vh;
+  padding: var(--space-3) var(--space-4);
+  overflow-y: auto;
+}
+.log p { margin: 0; }
+.question { margin-bottom: var(--space-1) !important; }
+.answer { color: var(--ink-muted); }
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-2) !important;
+}
+.links a { color: var(--gold-ink); text-decoration: none; }
+.links a:hover { text-decoration: underline; }
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--line);
+}
+.form:focus-within { outline: 2px solid var(--focus); outline-offset: -2px; }
+.form input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: 0;
+  color: var(--ink);
+  font: inherit;
+}
+.form input:focus { outline: none; }
+.form input::placeholder { color: var(--ink-muted); }
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0 var(--space-4) var(--space-3);
+}
+.suggestions button { background: none; cursor: pointer; }
+.suggestions button:hover { color: var(--gold-ink); border-color: var(--gold-ink); }
+
+/* The ticker leaves the bottom edge on phones and under reduced motion, so the box drops down. */
+@media (max-width: 767px) {
+  .trigger { bottom: var(--space-4); }
+  .box { bottom: calc(var(--space-4) + 40px + var(--space-2)); }
+  .hint { display: none; }
+  .close { margin-left: auto; }
+  /* 16px stops iOS zooming the page when the field takes focus. */
+  .form input { font-size: var(--type-body); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trigger { bottom: var(--space-4); }
+  .box { bottom: calc(var(--space-4) + 40px + var(--space-2)); }
+}

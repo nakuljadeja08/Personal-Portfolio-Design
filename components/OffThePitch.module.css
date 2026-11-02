@@ -1,0 +1,18 @@
+.section { padding-block: 0 var(--space-40); }
+
+.eyebrow { margin: 0 0 var(--space-4); }
+.title { font-size: var(--type-display-l); line-height: 1; }
+.intro { margin: var(--space-6) 0 var(--space-12); max-width: 52ch; color: var(--ink-muted); }
+
+.widgets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.widgets:empty { display: none; }
+
+@media (max-width: 767px) {
+  .section { padding-block: 0 var(--space-24); }
+  .title { font-size: calc(var(--type-display-l) * .8); }
+}

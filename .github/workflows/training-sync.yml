@@ -1,0 +1,29 @@
+name: Training sync
+
+on:
+  schedule:
+    - cron: "0 10 * * *" # 06:00 New York in summer, 05:00 in winter
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/sync-training.mjs
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
+      - name: Commit if anything changed
+        run: |
+          git config user.name "training-sync"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/training.json
+          git diff --cached --quiet || (git commit -m "chore: sync training data" && git push)

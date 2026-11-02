@@ -1,0 +1,10 @@
+/* Clears the fixed ticker on desktop. */
+.main { padding-bottom: 40px; }
+
+@media (max-width: 767px) {
+  .main { padding-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main { padding-bottom: 0; }
+}

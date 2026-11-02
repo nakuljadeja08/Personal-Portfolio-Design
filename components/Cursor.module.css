@@ -1,0 +1,50 @@
+.crosshair,
+.lock,
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Difference blending keeps it readable on paper, navy and gold in both themes. */
+.crosshair {
+  width: 0;
+  height: 0;
+  mix-blend-mode: difference;
+}
+.crosshair[data-on="false"] { visibility: hidden; }
+.crosshair span {
+  position: absolute;
+  background: var(--on-navy);
+}
+.crosshair span:nth-child(1) { left: -1px; top: -10px; width: 2px; height: 6px; }
+.crosshair span:nth-child(2) { left: -1px; top: 4px; width: 2px; height: 6px; }
+.crosshair span:nth-child(3) { left: -10px; top: -1px; width: 6px; height: 2px; }
+.crosshair span:nth-child(4) { left: 4px; top: -1px; width: 6px; height: 2px; }
+
+.lock {
+  transition: transform .12s ease-out, width .12s ease-out, height .12s ease-out, opacity .12s;
+}
+.lock[data-on="false"] { opacity: 0; }
+.lock span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 0 solid var(--gold);
+}
+.lock span:nth-child(1) { top: 0; left: 0; border-width: 2px 0 0 2px; }
+.lock span:nth-child(2) { top: 0; right: 0; border-width: 2px 2px 0 0; }
+.lock span:nth-child(3) { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
+.lock span:nth-child(4) { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+.dot {
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  border-radius: var(--radius-pill);
+  background: var(--gold);
+  opacity: 0;
+}
+.dot[data-on] { opacity: calc(var(--fade) * .8); }

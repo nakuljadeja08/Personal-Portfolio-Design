@@ -1,0 +1,78 @@
+/* Nakul Live — generated from the design system's tokens.json. Edit there first. */
+:root {
+  color-scheme: light;
+  --paper: #F6F5F1;
+  --paper-raised: #FFFFFF;
+  --line: #D8D5CC;
+  --ink: #0B1426;
+  --ink-muted: #565E6C;
+  --navy: #0F2A5C;
+  --on-navy: #F6F5F1;
+  --gold: #C9A227;
+  --on-gold: #0B1426;
+  --gold-ink: #7A5C00;
+  --live: #0B7A4A;
+  --down: #B42318;
+  --focus: var(--gold-ink);
+  --shadow-float: 0 12px 32px rgba(11, 20, 38, 0.10);
+
+  --font-display: var(--font-archivo-display), Arial, "Helvetica Neue", sans-serif;
+  --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, Menlo, Consolas, monospace;
+
+  --type-display-xl: 96px;
+  --type-display-l: 56px;
+  --type-title: 28px;
+  --type-body-l: 20px;
+  --type-body: 16px;
+  --type-score: 44px;
+  --type-data: 14px;
+  --type-label: 12px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-24: 96px;
+  --space-40: 160px;
+
+  --radius-0: 0px;
+  --radius-sm: 2px;
+  --radius-pill: 999px;
+}
+
+/* Night match: follows the OS unless the scorebug toggle has set data-theme. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #0A101C;
+    --paper-raised: #111A2B;
+    --line: #26324A;
+    --ink: #EEF1F6;
+    --ink-muted: #9CA6B8;
+    --navy: #2A4F9A;
+    --gold: #D9B444;
+    --gold-ink: #E3C35C;
+    --live: #3DD68C;
+    --down: #FF7B6B;
+    --shadow-float: 0 12px 32px rgba(0, 0, 0, 0.45);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0A101C;
+  --paper-raised: #111A2B;
+  --line: #26324A;
+  --ink: #EEF1F6;
+  --ink-muted: #9CA6B8;
+  --navy: #2A4F9A;
+  --gold: #D9B444;
+  --gold-ink: #E3C35C;
+  --live: #3DD68C;
+  --down: #FF7B6B;
+  --shadow-float: 0 12px 32px rgba(0, 0, 0, 0.45);
+}

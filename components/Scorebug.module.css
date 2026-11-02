@@ -1,0 +1,122 @@
+.bug {
+  position: fixed;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: 40;
+  display: flex;
+  align-items: stretch;
+  height: 44px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+}
+
+.name {
+  display: grid;
+  place-items: center;
+  padding: 0 14px;
+  background: var(--navy);
+  color: var(--on-navy);
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: .02em;
+  text-decoration: none;
+}
+.name:hover { color: var(--on-navy); }
+
+.minute,
+.minuteStatic,
+.currentStatic {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.minuteStatic { padding: 0 var(--space-3); border-right: 1px solid var(--line); }
+.currentStatic { display: none; padding-right: var(--space-3); margin-left: calc(-1 * var(--space-1)); }
+
+/* The button form of the clock is the phone and tablet menu trigger. */
+.minute {
+  display: none;
+  padding: 0 var(--space-3);
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+.clock { display: inline-block; min-width: 3ch; }
+
+.links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--space-1);
+}
+.links a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  font-size: var(--type-data);
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--ink-muted);
+  border-bottom: 2px solid transparent;
+}
+.links a:hover { color: var(--gold-ink); }
+.links a[aria-current] { color: var(--ink); border-bottom-color: var(--gold); }
+
+.theme {
+  background: none;
+  border: 0;
+  border-left: 1px solid var(--line);
+  padding: 0 var(--space-3);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.theme:hover { color: var(--gold-ink); }
+.theme [data-on="true"] { color: var(--ink); font-weight: 700; }
+.theme:hover [data-on="true"] { color: var(--gold-ink); }
+
+/* Desktop: collapse on scroll down, expand again on hover, focus or scroll up. */
+@media (min-width: 1000px) {
+  .bug[data-collapsed="true"]:not(:hover):not(:focus-within) .links,
+  .bug[data-collapsed="true"]:not(:hover):not(:focus-within) .theme { display: none; }
+  .bug[data-collapsed="true"]:not(:hover):not(:focus-within) .minuteStatic { border-right: 0; padding-right: var(--space-2); }
+  .bug[data-collapsed="true"]:not(:hover):not(:focus-within) .currentStatic { display: flex; }
+}
+
+/* Phone and tablet: the row can't hold six links, so the clock opens them as a menu. */
+@media (max-width: 999px) {
+  .minuteStatic,
+  .currentStatic { display: none; }
+  .minute { display: flex; }
+
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    min-width: 200px;
+    margin-top: var(--space-1);
+    padding: var(--space-1) 0;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    flex-direction: column;
+  }
+  .links[data-open="true"] { display: flex; }
+  .links a {
+    height: 44px;
+    border-bottom: 0;
+    border-left: 2px solid transparent;
+  }
+  .links a[aria-current] { border-left-color: var(--gold); }
+}
+
+@media (max-width: 400px) {
+  .current { display: none; }
+}
