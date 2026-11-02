@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-const SECTIONS = ["about", "skills", "transfer", "experience", "projects", "life", "contact"];
+const SECTIONS = ["about", "skills", "transfer", "experience", "projects", "cabinet", "life", "contact"];
 const RESUMES = ["Nakul_Jadeja_Resume_Fintech.pdf", "Nakul_Jadeja_Resume_General.pdf"];
 
 function watchForErrors(page: Page) {
@@ -83,7 +83,17 @@ test("the transfer window signs three players, then closes", async ({ page }) =>
   await expect(section.getByText(/Budget's gone/)).toHaveCount(0);
 });
 
-test("the match card stays hidden without a key, and the API still says 200",async ({ page, request }) => {
+test("the trophy cabinet links out to verify, and hides empty shelves", async ({ page }) => {
+  await page.goto("/#cabinet");
+  const section = page.locator("#cabinet");
+  await expect(section.getByRole("link", { name: /Verify IBM Data Engineering/ })).toHaveAttribute(
+    "href",
+    /coursera\.org\/verify\/professional-cert\//,
+  );
+  await expect(section.getByText("Co-curricular")).toHaveCount(0);
+});
+
+test("the match card stays hidden without a key, and the API still says 200", async ({ page, request }) => {
   const response = await request.get("/api/matchday");
   expect(response.status()).toBe(200);
   await page.goto("/#life");

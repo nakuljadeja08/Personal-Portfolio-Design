@@ -4,6 +4,7 @@ export const sections = [
   { id: "transfer", label: "Transfers" },
   { id: "experience", label: "Season" },
   { id: "projects", label: "Loadout" },
+  { id: "cabinet", label: "Trophies" },
   { id: "life", label: "Off the pitch" },
   { id: "contact", label: "Full time" },
 ] as const;

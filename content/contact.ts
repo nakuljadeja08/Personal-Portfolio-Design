@@ -1,7 +1,7 @@
 export type ResumeCut = "fintech" | "general";
 
 export const contactCopy = {
-  eyebrow: "07 · Full time",
+  eyebrow: "08 · Full time",
   title: "Let's book a fixture.",
   body: "You made it to full time, which is more than most résumés get. If you've got data that needs questioning, I'd like to hear about it. I reply faster than VAR.",
   copy: "copy",

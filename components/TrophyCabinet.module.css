@@ -1,0 +1,64 @@
+.section { padding-bottom: var(--space-40); }
+
+.eyebrow { margin: 0 0 var(--space-4); }
+.title { font-size: var(--type-display-l); line-height: 1; }
+.intro { margin: var(--space-6) 0 0; max-width: 52ch; color: var(--ink-muted); }
+
+.shelf { margin-top: var(--space-12); }
+.shelfLabel { margin: 0 0 var(--space-4); }
+
+.big {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Navy in both themes, like the other broadcast panels, with gold for the number. */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-6);
+  background: var(--navy);
+  color: var(--on-navy);
+}
+.card :focus-visible { outline-color: var(--gold); }
+.stat { display: flex; align-items: baseline; gap: var(--space-2); margin: 0; }
+.value { color: var(--gold); }
+.statLabel { color: var(--on-navy); opacity: .85; }
+.name { margin-top: var(--space-4); font-size: 22px; }
+.meta { margin: var(--space-1) 0 0; opacity: .85; }
+.note { margin: var(--space-3) 0 var(--space-4); }
+
+.verify { text-underline-offset: var(--space-1); white-space: nowrap; }
+.card .verify { margin-top: auto; }
+.card .verify:hover { color: var(--gold); }
+
+.rows { list-style: none; margin: var(--space-4) 0 0; padding: 0; }
+.row {
+  display: grid;
+  grid-template-columns: 1fr 260px 72px;
+  gap: var(--space-4);
+  align-items: baseline;
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--line);
+}
+.row:last-child { border-bottom: 1px solid var(--line); }
+.rowName { margin: 0; font-size: var(--type-body); font-weight: 700; }
+.rowNote { margin: var(--space-1) 0 0; font-size: var(--type-data); color: var(--ink-muted); }
+.rowMeta { margin: 0; color: var(--ink-muted); }
+.row .verify { justify-self: end; }
+
+@media (max-width: 999px) {
+  .big { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 767px) {
+  .section { padding-bottom: var(--space-24); }
+  .title { font-size: calc(var(--type-display-l) * .8); }
+  .card { padding: var(--space-4); }
+  .row { grid-template-columns: 1fr; gap: var(--space-1); }
+  .row .verify { justify-self: start; }
+}

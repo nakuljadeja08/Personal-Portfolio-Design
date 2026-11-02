@@ -4,7 +4,7 @@ import { expect, test } from "@playwright/test";
 test.skip(Boolean(process.env.CI), "Screenshot baselines are local to one machine");
 test.use({ contextOptions: { reducedMotion: "reduce" } });
 
-const SECTIONS = ["skills", "transfer", "experience", "projects", "life", "contact"];
+const SECTIONS = ["skills", "transfer", "experience", "projects", "cabinet", "life", "contact"];
 
 test("first viewport", async ({ page }) => {
   await page.goto("/");

@@ -34,11 +34,6 @@ export const profile = {
     { school: "Stevens Institute of Technology", degree: "MS Computer Science", dates: "Aug 2025 – Dec 2026 (expected)" },
     { school: "Vellore Institute of Technology", degree: "BTech Computer Science", dates: "July 2019 – April 2023" },
   ],
-  certifications: [
-    { name: "Snowflake Data Engineering Professional Certificate", issuer: "Coursera", date: "Jun 2026" },
-    { name: "IBM Data Engineering Professional Certificate", issuer: "Coursera", date: "Mar 2026" },
-    { name: "Bloomberg Market Concepts", issuer: "Bloomberg", date: "Oct 2026" },
-  ],
   resumes: {
     fintech: "/resumes/Nakul_Jadeja_Resume_Fintech.pdf",
     general: "/resumes/Nakul_Jadeja_Resume_General.pdf",
