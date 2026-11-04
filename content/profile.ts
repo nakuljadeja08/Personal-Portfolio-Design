@@ -16,7 +16,7 @@ export const profile = {
   role: "Data Engineer",
   location: "Jersey City, NJ",
   rank: "DE II",
-  portrait: { src: "/images/nakul.webp", alt: "Nakul in Madrid, in front of the Puerta de Alcalá" },
+  portrait: { src: "/images/nakul.webp", alt: "Nakul in a grey blazer and black turtleneck" },
   headline: "Hi, I'm Nakul. I build data pipelines.",
   lead: [
     "I've wrangled data about ships, then oil wells, then internet creators. Money feels like the obvious next step, so I'm looking for a data engineering job in fintech or banking.",
