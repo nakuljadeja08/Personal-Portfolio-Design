@@ -1,7 +1,7 @@
 export type ResumeCut = "fintech" | "general";
 
 export const contactCopy = {
-  eyebrow: "08 · Full time",
+  eyebrow: "07 · Full time",
   title: "Let's book a fixture.",
   body: "You made it to full time, which is more than most résumés get. If you've got data that needs questioning, I'd like to hear about it. I reply faster than VAR.",
   // The fintech pitch lives down here, so the top of the page doesn't narrow who keeps reading.

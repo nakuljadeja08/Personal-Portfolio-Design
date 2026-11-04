@@ -5,10 +5,12 @@ export type Fixture = {
   role: string;
   result: { value: string; label: string; dir: "up" | "none" };
   report: string[];
+  /** Quoted word for word from a LinkedIn recommendation, cut only where the ellipsis says so (and his hyphen set as a dash). */
+  quote?: { text: string; name: string; title: string };
 };
 
 export const seasonCopy = {
-  eyebrow: "04 · Season",
+  eyebrow: "02 · Season",
   title: "The season so far.",
   intro: "Three clubs and one trip back to school, and nobody has relegated me yet. Newest first. Open any fixture for the match report.",
   defaultOpen: "ExxonMobil",
@@ -52,6 +54,11 @@ export const fixtures: Fixture[] = [
       "I also automated our deployments through GitHub, which cut deployment time by 82%.",
       "On top of the pipelines sat the Spotfire and Power BI reports. 200+ engineers adopted them, and they generated $5M in annual savings.",
     ],
+    quote: {
+      text: "His ability to grasp complex concepts and apply them practically was remarkable. … Beyond his technical skills, Nakul is a natural communicator — confident, articulate, and always approachable.",
+      name: "Piyush Namdeo",
+      title: "Wells Analytics Engineer, ExxonMobil",
+    },
   },
   {
     season: "2021–22",

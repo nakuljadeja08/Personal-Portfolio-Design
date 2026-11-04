@@ -17,7 +17,7 @@ export const commands: Record<string, Command> = {
   },
   stack: {
     answer: "SQL and Python in goal. Azure, Docker, GitHub Actions and Supabase at the back. Azure Data Factory, Databricks and Airflow in midfield. Snowflake, Power BI and React up front.",
-    links: [{ label: "See the team sheet →", href: "#skills" }],
+    links: [{ label: "See the full kit →", href: "#transfer" }],
   },
   resume: {
     answer: "Two cuts, Fintech and General. Same me, different project up front.",

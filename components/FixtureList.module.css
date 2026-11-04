@@ -70,6 +70,15 @@
 .line { max-width: 62ch; margin: 0 0 var(--space-3); }
 .line:last-child { margin-bottom: var(--space-6); }
 
+.quote {
+  max-width: 62ch;
+  margin: var(--space-2) 0 var(--space-6);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--gold);
+}
+.quoteText { margin: 0; font-style: italic; }
+.quoteBy { margin-top: var(--space-2); color: var(--ink-muted); }
+
 .next {
   display: grid;
   grid-template-columns: 96px 1fr auto;

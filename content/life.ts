@@ -4,7 +4,7 @@ export type Training = { updatedAt: string | null; weeks: TrainingWeek[]; prs: T
 export type Clip = { title: string; href: string };
 
 export const lifeCopy = {
-  eyebrow: "07 · Off the pitch",
+  eyebrow: "06 · Off the pitch",
   title: "What I do when the pipelines are green.",
   intro: "I run, lift, watch Real Madrid and play Valorant. All four keep score, and none of them care how my day went.",
 };

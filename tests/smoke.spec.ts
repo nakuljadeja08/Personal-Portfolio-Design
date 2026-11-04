@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-const SECTIONS = ["about", "skills", "transfer", "experience", "projects", "cabinet", "life", "contact"];
+const SECTIONS = ["about", "experience", "projects", "transfer", "cabinet", "life", "contact"];
 const RESUMES = ["Nakul_Jadeja_Resume_Fintech.pdf", "Nakul_Jadeja_Resume_General.pdf"];
 
 function watchForErrors(page: Page) {
@@ -76,7 +76,8 @@ test("the transfer window signs three players, then closes", async ({ page }) =>
 
   // A fourth pick does nothing but explain itself, and dropping a player reopens the slot.
   await problem(/Nobody opens our reports/).click({ force: true });
-  await expect(section.getByText("Power BI")).toHaveCount(0);
+  // Scoped to the team sheet, because the full kit list below the picker names Power BI too.
+  await expect(section.locator("ol").getByText("Power BI")).toHaveCount(0);
   await expect(section.getByText(/Budget's gone/)).toBeVisible();
   await problem(/Deploys take forever/).click();
   await expect(section.getByText("Open slot")).toHaveCount(1);

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { m } from "motion/react";
 import { profile } from "@/content/profile";
+import { stack, stackCopy } from "@/content/skills";
 import { MAX_SIGNINGS, signings, transferCopy } from "@/content/transfer";
 import { fadeUp } from "@/lib/motion";
 import { FINTECH_EVENT, isFintechReferrer } from "@/lib/referrer";
@@ -60,6 +61,18 @@ export function TransferWindow() {
             );
           })}
         </ul>
+
+        <div className={styles.kit}>
+          <h3 className={`nl-label ${styles.kitLabel}`}>{stackCopy.label}</h3>
+          <dl className={`nl-data ${styles.kitList}`}>
+            {stack.map((group) => (
+              <div key={group.label}>
+                <dt>{group.label}</dt>
+                <dd>{group.tools.join(" · ")}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
 
       <m.div
