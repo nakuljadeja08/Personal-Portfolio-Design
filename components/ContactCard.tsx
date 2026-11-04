@@ -42,6 +42,7 @@ export function ContactCard() {
         <p className={`nl-label ${styles.eyebrow}`}>{contactCopy.eyebrow}</p>
         <h2 className={`nl-display ${styles.title}`}>{contactCopy.title}</h2>
         <p className={styles.body}>{contactCopy.body}</p>
+        <p className={styles.body}>{contactCopy.fintech}</p>
 
         <p className={styles.mail}>
           <a className={styles.address} href={`mailto:${profile.email}`}>

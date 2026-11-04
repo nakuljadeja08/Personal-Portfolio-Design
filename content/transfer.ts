@@ -77,8 +77,8 @@ export const signings: Signing[] = [
     problem: "We're letting AI near the money",
     position: "GK",
     player: "Python",
-    stat: { value: "6", label: "agents, zero say on risk limits" },
-    evidence: "In my Wayne Industries project, the risk limits are plain Python that runs first. The agents can argue about allocations, but never about the caps.",
+    stat: { value: "0", label: "limits the model can loosen" },
+    evidence: "In Orblex Industries, Claude proposes swing trades, but Python sets the size, enforces every cap and blocks anything with missing data. The model can argue about a trade, never about the limits.",
     fintech: true,
   },
   {

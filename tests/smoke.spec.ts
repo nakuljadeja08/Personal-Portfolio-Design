@@ -50,7 +50,7 @@ test("the command box answers, misses, and flips the résumé picker", async ({ 
   await expect(page.getByText("No rows matched. Try help.")).toBeVisible();
   await input.fill("fintech");
   await input.press("Enter");
-  await expect(page.getByText(/six-agent portfolio pipeline/)).toBeVisible();
+  await expect(page.getByText(/Python rules decide what gets through/)).toBeVisible();
   await expect(page.getByRole("radio", { name: /fintech/i })).toBeChecked();
 });
 
@@ -120,6 +120,31 @@ test("a fixture from the API shows up as a card", async ({ page }) => {
   await page.goto("/#life");
   await expect(page.getByText("Test FC")).toBeVisible();
   await expect(page.getByText(/T−\d+d/)).toBeVisible();
+});
+
+const CASE_STUDIES = ["valorant-copilot", "orblex-industries", "rocathon-search"];
+
+test("every project card opens its case study, with no errors and no sideways scroll", async ({ page }) => {
+  const errors = watchForErrors(page);
+  await page.goto("/");
+  await page.waitForLoadState("networkidle");
+  const links = page.locator("#projects").getByRole("link", { name: /case study/ });
+  await expect(links).toHaveCount(CASE_STUDIES.length);
+  for (const slug of CASE_STUDIES) {
+    await page.goto(`/projects/${slug}`);
+    await expect(page.locator("h1")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "How it works" })).toBeVisible();
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    );
+    expect(overflow).toBe(0);
+  }
+  expect(errors).toEqual([]);
+});
+
+test("an unknown case study is a 404", async ({ request }) => {
+  const response = await request.get("/projects/not-a-project");
+  expect(response.status()).toBe(404);
 });
 
 test("the sample page doesn't exist in production", async ({ request }) => {

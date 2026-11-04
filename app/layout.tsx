@@ -16,7 +16,7 @@ const archivoDisplay = Archivo({
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
 
 const title = "Nakul Jadeja · Data Engineer";
-const description = "Data engineer building pipelines with traceable lineage. Open to data engineering roles in fintech, banking and financial services.";
+const description = "Data engineer building pipelines with traceable lineage. Open to full-time data engineering roles.";
 
 // Vercel provides the domain. Share images need an absolute URL, and this stays right when the domain changes.
 const domain = process.env.VERCEL_PROJECT_PRODUCTION_URL;

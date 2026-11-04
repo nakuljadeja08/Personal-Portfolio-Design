@@ -5,11 +5,11 @@ export type Command = { answer: string; links?: { label: string; href: string }[
 // Written in advance, so the box can't make anything up. Every claim has to match the résumé.
 export const commands: Record<string, Command> = {
   projects: {
-    answer: "Three in the loadout: a coach that has to show its work, six agents on a short leash, and a search engine that came 2nd.",
+    answer: "Three in the loadout: a coach that has to show its work, an AI trader on a short leash, and a search engine that came 2nd. Each has a full case study.",
     links: [{ label: "See the loadout →", href: "#projects" }],
   },
   fintech: {
-    answer: "Short version: I built a six-agent portfolio pipeline with hard risk caps, got Bloomberg Market Concepts certified, and I'd like to do this for a living. I've switched the résumé picker to Fintech for you.",
+    answer: "Short version: I built Orblex Industries, where Claude proposes trades and Python rules decide what gets through, got Bloomberg Market Concepts certified, and I'd like to do this for a living. I've switched the résumé picker to Fintech for you.",
     links: [
       { label: "Fintech résumé ↓", href: profile.resumes.fintech },
       { label: "Book a fixture →", href: "#contact" },
