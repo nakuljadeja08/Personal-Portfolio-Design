@@ -23,7 +23,7 @@ export const profile = {
     "Off the clock I run, lift, and take Real Madrid results personally.",
   ],
   status: "Free agent · fintech and banking",
-  resumeCta: "Résumé, the serious version ↓",
+  resumeCta: "Download résumé ↓",
   contactCta: "Say hello →",
   valorantPeak: "Immortal 1",
   riotId: "nakuljadeja08",
@@ -43,8 +43,8 @@ export const profile = {
 export const abilities: Ability[] = [
   { key: "Q", name: "ETL", detail: "gets data from A to B in one piece" },
   { key: "E", name: "Lineage", detail: "knows where every number grew up" },
-  { key: "C", name: "CI/CD", detail: "82% less waiting on deploys" },
-  { key: "X", name: "Ultimate", detail: "$5M a year saved. Long cooldown." },
+  { key: "C", name: "CI/CD", detail: "deploys nobody has to babysit" },
+  { key: "X", name: "Ultimate", detail: "one version of the truth. Long cooldown." },
 ];
 
 export const tickerItems: TickerItem[] = [

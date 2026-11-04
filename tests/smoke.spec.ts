@@ -149,10 +149,10 @@ test("section links land on their section, even ones not laid out yet", async ({
   await expect(page.locator("#life h2")).toBeInViewport();
 });
 
-test("the scorebug says Kick-off at the top of the page", async ({ page }) => {
+test("the scorebug says About at the top of the page", async ({ page }) => {
   await page.goto("/");
   await page.waitForLoadState("networkidle");
-  await expect(page.locator('nav[aria-label="Sections"] [aria-current="true"]')).toHaveText("Kick-off");
+  await expect(page.locator('nav[aria-label="Sections"] [aria-current="true"]')).toHaveText("About");
 });
 
 test("the custom cursor turns on for a mouse only",async ({ page }, testInfo) => {

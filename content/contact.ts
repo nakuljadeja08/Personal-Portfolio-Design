@@ -12,6 +12,6 @@ export const contactCopy = {
     fintech: { label: "Fintech", note: "Same me, with Wayne Industries and the Bloomberg Terminal up front." },
     general: { label: "General", note: "Same me, with the VALORANT Copilot up front." },
   } satisfies Record<ResumeCut, { label: string; note: string }>,
-  download: "Download the serious version ↓",
+  download: "Download résumé ↓",
   locale: "Jersey City, NJ · ET",
 };

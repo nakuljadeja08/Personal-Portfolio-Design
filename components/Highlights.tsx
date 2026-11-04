@@ -12,6 +12,7 @@ export function Highlights({ clips }: { clips: Clip[] }) {
   return (
     <m.div
       className={styles.panel}
+      data-solo={clips.length === 0}
       variants={fadeUp}
       initial={reduced ? "shown" : "hidden"}
       whileInView="shown"
@@ -29,9 +30,10 @@ export function Highlights({ clips }: { clips: Clip[] }) {
         </p>
       </div>
 
-      <div className={styles.clips}>
-        <h4 className={`nl-label ${styles.label}`}>{highlightsCopy.clipsLabel}</h4>
-        {clips.length > 0 ? (
+      {/* No "coming soon" placeholder: the clips column only exists once there's a clip in it. */}
+      {clips.length > 0 && (
+        <div className={styles.clips}>
+          <h4 className={`nl-label ${styles.label}`}>{highlightsCopy.clipsLabel}</h4>
           <ul className={`nl-data ${styles.clipList}`}>
             {clips.map((clip) => (
               <li key={clip.href}>
@@ -41,10 +43,8 @@ export function Highlights({ clips }: { clips: Clip[] }) {
               </li>
             ))}
           </ul>
-        ) : (
-          <p className={`nl-data ${styles.empty}`}>{highlightsCopy.empty}</p>
-        )}
-      </div>
+        </div>
+      )}
     </m.div>
   );
 }

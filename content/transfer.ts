@@ -78,7 +78,7 @@ export const signings: Signing[] = [
     position: "GK",
     player: "Python",
     stat: { value: "6", label: "agents, zero say on risk limits" },
-    evidence: "In my Wayne Industries project, Python sets the risk limits before the LLM gets a vote, because I've met LLMs.",
+    evidence: "In my Wayne Industries project, the risk limits are plain Python that runs first. The agents can argue about allocations, but never about the caps.",
     fintech: true,
   },
   {
@@ -87,6 +87,6 @@ export const signings: Signing[] = [
     position: "GK",
     player: "SQL",
     stat: { value: "12%", label: "off vessel turnaround time" },
-    evidence: "My SQL dashboards at Regal Shipping tracked fuel, voyages and maintenance. Ships behave better when someone's watching.",
+    evidence: "My SQL dashboards at Regal Shipping tracked fuel, voyages and maintenance, so decisions came from the data instead of whoever spoke loudest.",
   },
 ];
