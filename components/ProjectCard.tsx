@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { m } from "motion/react";
 import { loadoutCopy, projects, type Project } from "@/content/projects";
 import { fadeUp, stagger } from "@/lib/motion";
@@ -28,6 +29,9 @@ function ProjectCard({ project }: { project: Project }) {
         ))}
       </ul>
       <p className={`nl-data ${styles.links}`}>
+        <Link href={`/projects/${project.slug}`} aria-label={`${project.title} case study`}>
+          Case study →
+        </Link>
         {repo && (
           <a href={repo} target="_blank" rel="noreferrer" aria-label={`${project.title} source code`}>
             Source ↗

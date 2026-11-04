@@ -65,7 +65,7 @@ export function PlayerCard() {
           <span className="nl-dot" aria-hidden="true" /> {profile.status}
         </p>
         <div className={styles.actions}>
-          <a className={styles.resume} href={profile.resumes.fintech} download>
+          <a className={styles.resume} href={profile.resumes.general} download>
             {profile.resumeCta}
           </a>
           <a className={`nl-data ${styles.contact}`} href="#contact">

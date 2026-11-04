@@ -26,7 +26,7 @@ export const formation: FormationLine[] = [
     skills: [
       { name: "Snowflake", where: "Where my ExxonMobil pipelines delivered the data." },
       { name: "Power BI", where: "Put the reports in front of 200+ engineers at ExxonMobil." },
-      { name: "React", where: "Built the Decision Trace dashboard for Wayne Industries." },
+      { name: "React", where: "Built the trade approval dashboard for Orblex Industries." },
     ],
   },
   {
@@ -56,7 +56,7 @@ export const formation: FormationLine[] = [
     job: "the last line, and the first thing I reach for",
     skills: [
       { name: "SQL", where: "In goal since the Regal Shipping fleet dashboards." },
-      { name: "Python", where: "Enforces the risk limits at Wayne Industries before the LLM gets a say." },
+      { name: "Python", where: "Owns every number and limit at Orblex Industries, so the LLM never gets a say on them." },
     ],
   },
 ];

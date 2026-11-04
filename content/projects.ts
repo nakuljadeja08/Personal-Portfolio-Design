@@ -1,5 +1,7 @@
 export type Project = {
   slot: string;
+  /** Matches a case study in caseStudies.ts. */
+  slug: string;
   title: string;
   year: string;
   pitch: string;
@@ -11,12 +13,13 @@ export type Project = {
 export const loadoutCopy = {
   eyebrow: "05 · Loadout",
   title: "The loadout.",
-  intro: "Three projects, no screenshots. Each one gets a single number to make its case.",
+  intro: "Three projects, one number each. Open any of them for the full case study: how it's built, why, and what it still can't do.",
 };
 
 export const projects: Project[] = [
   {
     slot: "01",
+    slug: "valorant-copilot",
     title: "VALORANT Coaching Copilot",
     year: "2026",
     pitch: "I hit Immortal 1 and still wanted a second opinion, so I built a coach that has to show its work. Every stat traces back to its raw rows, and a Watchdog re-checks each one before it's allowed to speak.",
@@ -29,15 +32,20 @@ export const projects: Project[] = [
   },
   {
     slot: "02",
-    title: "Wayne Industries",
+    slug: "orblex-industries",
+    title: "Orblex Industries",
     year: "2026",
-    pitch: "Six AI agents run a portfolio and audit themselves. Python sets the risk limits before the LLM gets a vote, because I've met LLMs. A four-step Decision Trace explains every allocation.",
-    stat: { value: "6", label: "agents, zero say on risk limits" },
+    pitch: "Claude reads the market and proposes swing trades. Python owns every number and limit, and can only make a trade smaller or stop it. I still approve every order, because I've met LLMs.",
+    stat: { value: "0", label: "limits the model is allowed to loosen" },
     stack: ["Python", "Claude API", "Supabase", "React"],
-    links: { live: "https://portfolio-managment-one.vercel.app" },
+    links: {
+      repo: "https://github.com/nakuljadeja08/orblex-industries",
+      live: "https://www.orblexindustries.com",
+    },
   },
   {
     slot: "03",
+    slug: "rocathon-search",
     title: "RoCathon Search",
     year: "2025",
     pitch: "A hackathon search engine for finding the right creators. Keyword search and embeddings each had their own opinion, so Reciprocal Rank Fusion makes them settle it.",

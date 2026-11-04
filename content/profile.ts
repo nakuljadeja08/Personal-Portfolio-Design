@@ -19,10 +19,10 @@ export const profile = {
   portrait: { src: "/images/nakul.webp", alt: "Nakul in a grey blazer and black turtleneck" },
   headline: "Hi, I'm Nakul. I build data pipelines.",
   lead: [
-    "I've wrangled data about ships, then oil wells, then internet creators. Money feels like the obvious next step, so I'm looking for a data engineering job in fintech or banking.",
+    "I've wrangled data about ships, then oil wells, then internet creators. Now I'm looking for a full-time data engineering job, and I'm not fussy about what the data's about, as long as it's messy.",
     "Off the clock I run, lift, and take Real Madrid results personally.",
   ],
-  status: "Free agent · fintech and banking",
+  status: "Free agent · open to data engineering roles",
   resumeCta: "Download résumé ↓",
   contactCta: "Say hello →",
   valorantPeak: "Immortal 1",
