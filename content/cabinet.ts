@@ -11,7 +11,7 @@ export type Trophy = {
 export type Shelf = { id: string; label: string; trophies: Trophy[] };
 
 export const cabinetCopy = {
-  eyebrow: "06 · Trophy cabinet",
+  eyebrow: "05 · Trophy cabinet",
   title: "The trophy cabinet.",
   intro: "The certificates that matter for this job, and links so you can check I'm not making them up. The rest are on the bench, including one on solar cells.",
   verify: "Verify ↗",

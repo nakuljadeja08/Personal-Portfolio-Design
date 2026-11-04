@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import { ContactCard } from "@/components/ContactCard";
 import { Extras } from "@/components/Extras";
 import { FixtureList } from "@/components/FixtureList";
-import { Formation } from "@/components/Formation";
 import { OffThePitch } from "@/components/OffThePitch";
 import { PlayerCard } from "@/components/PlayerCard";
 import { Loadout } from "@/components/ProjectCard";
@@ -14,7 +13,7 @@ import { tickerItems } from "@/content/profile";
 import styles from "./page.module.css";
 
 // Each boundary lets React hydrate that section separately, instead of in one long blocking task.
-const belowTheFold = [Formation, TransferWindow, FixtureList, Loadout, TrophyCabinet, OffThePitch, ContactCard];
+const belowTheFold = [FixtureList, Loadout, TransferWindow, TrophyCabinet, OffThePitch, ContactCard];
 
 export default function Home() {
   return (

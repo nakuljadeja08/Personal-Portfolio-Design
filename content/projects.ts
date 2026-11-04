@@ -11,7 +11,7 @@ export type Project = {
 };
 
 export const loadoutCopy = {
-  eyebrow: "05 · Loadout",
+  eyebrow: "03 · Loadout",
   title: "The loadout.",
   intro: "Three projects, one number each. Open any of them for the full case study: how it's built, why, and what it still can't do.",
 };

@@ -81,6 +81,14 @@ export function FixtureList() {
                         {line}
                       </p>
                     ))}
+                    {fixture.quote && (
+                      <figure className={styles.quote}>
+                        <blockquote className={`nl-body ${styles.quoteText}`}>“{fixture.quote.text}”</blockquote>
+                        <figcaption className={`nl-data ${styles.quoteBy}`}>
+                          {fixture.quote.name} · {fixture.quote.title}
+                        </figcaption>
+                      </figure>
+                    )}
                   </div>
                 </div>
               </m.li>

@@ -12,7 +12,7 @@ export type Signing = {
 export const MAX_SIGNINGS = 3;
 
 export const transferCopy = {
-  eyebrow: "03 · Transfer window",
+  eyebrow: "04 · Transfer window",
   title: "Now you pick.",
   intro: "What's going wrong at your club? Pick up to three problems and I'll send out whoever has handled it before. Every number comes from real work.",
   problemsLabel: "Problems at your club",
