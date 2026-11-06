@@ -14,7 +14,7 @@ export const profile = {
   name: "Nakul Jadeja",
   initials: "NJ",
   role: "Data Engineer",
-  location: "Jersey City, NJ",
+  location: "New York, NY",
   rank: "DE II",
   portrait: { src: "/images/nakul.webp", alt: "Nakul in a grey blazer and black turtleneck" },
   headline: "Hi, I'm Nakul. I build data pipelines.",

@@ -15,5 +15,5 @@ export const contactCopy = {
     general: { label: "General", note: "Same me, with the VALORANT Copilot up front." },
   } satisfies Record<ResumeCut, { label: string; note: string }>,
   download: "Download résumé ↓",
-  locale: "Jersey City, NJ · ET",
+  locale: "New York, NY · ET",
 };
