@@ -16,7 +16,6 @@ export const profile = {
   role: "Data Engineer",
   location: "New York, NY",
   rank: "DE II",
-  portrait: { src: "/images/nakul.webp", alt: "Nakul in a grey blazer and black turtleneck" },
   headline: "Hi, I'm Nakul. I build data pipelines.",
   lead: [
     "I've wrangled data about ships, then oil wells, then internet creators. Now I'm looking for a full-time data engineering job, and I'm not fussy about what the data's about, as long as it's messy.",
