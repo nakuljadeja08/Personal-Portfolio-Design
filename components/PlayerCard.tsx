@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { m } from "motion/react";
 import { abilities, profile } from "@/content/profile";
 import { fadeUp } from "@/lib/motion";
@@ -85,10 +86,20 @@ export function PlayerCard() {
           <span className={`nl-label ${styles.rank}`}>Rank · {profile.rank}</span>
         </header>
         <div className={styles.identity}>
-          <h2 className={`nl-title ${styles.name}`}>{profile.name}</h2>
-          <p className={`nl-data ${styles.role}`}>
-            {profile.role} · {profile.location}
-          </p>
+          <Image
+            className={styles.portrait}
+            src={profile.portrait.src}
+            alt={profile.portrait.alt}
+            width={96}
+            height={96}
+            loading="eager"
+          />
+          <div>
+            <h2 className={`nl-title ${styles.name}`}>{profile.name}</h2>
+            <p className={`nl-data ${styles.role}`}>
+              {profile.role} · {profile.location}
+            </p>
+          </div>
         </div>
 
         <ul className={styles.kit}>
