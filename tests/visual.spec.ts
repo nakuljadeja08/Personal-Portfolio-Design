@@ -9,6 +9,8 @@ const SECTIONS = ["experience", "projects", "transfer", "cabinet", "life", "cont
 test("first viewport", async ({ page }) => {
   await page.goto("/");
   await page.evaluate(() => document.fonts.ready);
+  // The portrait has to finish decoding, or it's a coin flip whether it's in the picture.
+  await page.getByRole("img", { name: /Nakul smiling in a navy/ }).evaluate((image: HTMLImageElement) => image.decode());
   await expect(page).toHaveScreenshot("first-viewport.png", { maxDiffPixelRatio: 0.01 });
 });
 
