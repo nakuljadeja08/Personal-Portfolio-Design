@@ -109,7 +109,7 @@ export const caseStudies: CaseStudy[] = [
     summary: "Claude proposes swing trades. Python owns every number and limit, and a person approves every order.",
     links: {
       repo: "https://github.com/nakuljadeja08/orblex-industries",
-      live: "https://www.orblexindustries.com",
+      live: "https://demo.orblexindustries.com",
     },
     stack: ["Python", "Claude API", "Supabase", "React", "GitHub Actions", "Vercel"],
     facts: [

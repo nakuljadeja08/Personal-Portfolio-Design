@@ -40,7 +40,7 @@ export const projects: Project[] = [
     stack: ["Python", "Claude API", "Supabase", "React"],
     links: {
       repo: "https://github.com/nakuljadeja08/orblex-industries",
-      live: "https://www.orblexindustries.com",
+      live: "https://demo.orblexindustries.com",
     },
   },
   {
