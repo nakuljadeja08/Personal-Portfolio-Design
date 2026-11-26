@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { caseStudies, caseStudyCopy, getCaseStudy, type Flow } from "@/content/caseStudies";
 import { profile } from "@/content/profile";
+import { VideoEmbed } from "@/components/VideoEmbed";
 import styles from "./page.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -87,6 +88,8 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
         ))}
       </dl>
+
+      {study.video && <VideoEmbed video={study.video} />}
 
       <section className={styles.section} aria-labelledby="problem">
         <h2 id="problem" className={`nl-title ${styles.heading}`}>

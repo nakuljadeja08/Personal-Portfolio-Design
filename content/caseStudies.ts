@@ -1,5 +1,8 @@
 export type Flow = { title: string; steps: { name: string; detail: string }[] };
 
+/** A YouTube video, shown as its poster until someone presses play. */
+export type Video = { youtubeId: string; title: string; poster: string };
+
 export type CaseStudy = {
   slug: string;
   title: string;
@@ -8,6 +11,8 @@ export type CaseStudy = {
   links: { repo?: string; live?: string };
   stack: string[];
   facts: { value: string; label: string }[];
+  /** No placeholder: the player only appears once there's a video to play. */
+  video?: Video;
   problem: string[];
   flows: Flow[];
   decisions: { decision: string; why: string }[];
@@ -27,6 +32,8 @@ export const caseStudyCopy = {
   source: "Source ↗",
   live: "Live ↗",
   nextStudy: "Next case study",
+  play: "Play",
+  watchOn: "Watch on YouTube ↗",
   contact: "Want the long version in person? Say hello →",
 };
 
@@ -230,6 +237,74 @@ export const caseStudies: CaseStudy[] = [
     limits: [
       "The data is 200 mock creators supplied for the hackathon, not live accounts.",
       "The weights are fixed in the formula, not learned from real campaign results.",
+    ],
+  },
+  {
+    slug: "valorant-montage",
+    title: "VALORANT Montage Pipeline",
+    year: "2026",
+    summary: "A pipeline that watches 2.5 hours of my replays so I don't have to. It reads the kill feed, finds my kills, and cuts the montages.",
+    links: {},
+    stack: ["Python", "OpenCV", "NumPy", "ffmpeg", "NVENC"],
+    facts: [
+      { value: "100", label: "replay clips in, about 2.5 hours of footage" },
+      { value: "26/26", label: "kills found at the right time in a hand-checked sample" },
+      { value: "5", label: "videos out, from a few lines of config each" },
+    ],
+    // Once best-of is on YouTube, add the player here (the id is the part after "watch?v="):
+    // video: { youtubeId: "…", title: "Best Of 2025 · VALORANT montage", poster: "/images/projects/valorant-montage-best-of.jpg" },
+
+    problem: [
+      "I had 100 NVIDIA Instant Replay clips and wanted a montage. Doing it by hand means scrubbing through every clip to find the kills, and doing it all again for every new video idea.",
+      "The obvious fix, matching my name in the kill feed, doesn't work: the feed says \"Me\" in some clips and my account name in others. So the pipeline reads the feed the way a player does, by its layout and colours, and everything after that is config.",
+    ],
+    flows: [
+      {
+        title: "From replay clips to a montage",
+        steps: [
+          { name: "Detect", detail: "ffmpeg samples the kill-feed corner at 4 fps. A row is mine when it has the yellow-green outline and the chevron before my portrait; teal before red is a kill, red before teal a death." },
+          { name: "Plays", detail: "Kills at most 6 seconds apart become one play. Duplicate rows are dropped, and each play is scored: a 4K always beats two 2Ks, and speed, aces and headshots break ties." },
+          { name: "Labels", detail: "Each kill's saved feed row gives the III–V multi-kill badge by template match, and the weapon and agent by matching against a few named examples." },
+          { name: "Select", detail: "Each video is a few lines of TOML: best-of, aces and 4Ks, Sheriff only, one agent, Shorts. Plays can be vetoed in a text file without re-running anything." },
+          { name: "Render", detail: "Each play is cut once into a cached 1440p60 segment, tone-mapped from HDR on the GPU, its last kill slowed to half speed from the 120 fps source, then crossfaded into the video." },
+          { name: "Publish", detail: "Titles, descriptions with one chapter per play, tags and a thumbnail per video, ready to paste into YouTube Studio." },
+        ],
+      },
+    ],
+    decisions: [
+      {
+        decision: "Layout over names",
+        why: "My name changes between clips, the outline doesn't. Reading the row's shape and colours works under any in-game name.",
+      },
+      {
+        decision: "Fingerprint the white text, not the pixels",
+        why: "The feed is see-through, so a row's pixels change with whatever is behind it. Its white text and icons don't, and that's what makes the same row recognisable across frames.",
+      },
+      {
+        decision: "Small measured rules instead of a model",
+        why: "A game HUD is drawn the same way every time. Every threshold was measured on all the saved rows, and each stage writes a contact sheet so I can check it by eye.",
+      },
+      {
+        decision: "Cache the expensive part",
+        why: "Tone-mapping and slow-mo happen once per play and are shared across videos, so changing which plays go in a video re-renders in a minute or two.",
+      },
+    ],
+    example: {
+      title: "the false 5K",
+      body: [
+        "The first storyboard ranked a 5K at number one. Three of its rows were my teammates' kills: their see-through rows sat over an orange wall, which blended to the same yellow-green as my outline and passed the test.",
+        "My rows also have a chevron, a point before my portrait, which a blend can't fake. My first version of that check removed the fakes and 12 real kills with them. A before-and-after diff over all 100 clips caught it, and measuring the rule on every saved row fixed it: all 8 teammate rows gone, 1 real kill lost, on a wall that was yellow everywhere.",
+      ],
+    },
+    limits: [
+      "Recall is about 99%, not 100%: four times a IV badge shows up with no III before it, which most likely means one missed kill each.",
+      "Deaths are best-effort. The outline on a death row is short, so only about 1 in 3 is found, and they're only used to end a play early.",
+      "About 45 kills still have no weapon name: rarer guns, ability kills and bright HDR rows.",
+      "The videos have game audio only for now. Music has to be royalty-free or YouTube's Content ID claims it.",
+    ],
+    next: [
+      "Add music, with cuts nudged onto the beat.",
+      "Name the remaining weapon clusters, which takes a few minutes of labelling.",
     ],
   },
 ];

@@ -13,7 +13,7 @@ export type Project = {
 export const loadoutCopy = {
   eyebrow: "03 · Loadout",
   title: "The loadout.",
-  intro: "Three projects, one number each. Open any of them for the full case study: how it's built, why, and what it still can't do.",
+  intro: "Four projects, one number each. Open any of them for the full case study: how it's built, why, and what it still can't do.",
 };
 
 export const projects: Project[] = [
@@ -52,5 +52,15 @@ export const projects: Project[] = [
     stat: { value: "2nd", label: "place. I'm fine about it." },
     stack: ["TypeScript", "PostgreSQL", "pgvector", "OpenAI Embeddings", "Supabase"],
     links: { repo: "https://github.com/nakuljadeja08/RoCathon-SearchEngine" },
+  },
+  {
+    slot: "04",
+    slug: "valorant-montage",
+    title: "VALORANT Montage Pipeline",
+    year: "2026",
+    pitch: "100 replay clips, and no patience for scrubbing through them. So a script reads the kill feed, finds my kills, picks the best plays and cuts the montage. I just pick the music.",
+    stat: { value: "338", label: "kills found in the kill feed, none by hand" },
+    stack: ["Python", "OpenCV", "NumPy", "ffmpeg"],
+    links: {},
   },
 ];

@@ -123,7 +123,7 @@ test("a fixture from the API shows up as a card", async ({ page }) => {
   await expect(page.getByText(/T−\d+d/)).toBeVisible();
 });
 
-const CASE_STUDIES = ["valorant-copilot", "orblex-industries", "rocathon-search"];
+const CASE_STUDIES = ["valorant-copilot", "orblex-industries", "rocathon-search", "valorant-montage"];
 
 test("every project card opens its case study, with no errors and no sideways scroll", async ({ page }) => {
   const errors = watchForErrors(page);
