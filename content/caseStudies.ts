@@ -251,8 +251,7 @@ export const caseStudies: CaseStudy[] = [
       { value: "26/26", label: "kills found at the right time in a hand-checked sample" },
       { value: "5", label: "videos out, from a few lines of config each" },
     ],
-    // Once best-of is on YouTube, add the player here (the id is the part after "watch?v="):
-    // video: { youtubeId: "…", title: "Best Of 2025 · VALORANT montage", poster: "/images/projects/valorant-montage-best-of.jpg" },
+    video: { youtubeId: "6dEzXrys0Pc", title: "Best Of 2025 · VALORANT montage", poster: "/images/projects/valorant-montage-best-of.jpg" },
 
     problem: [
       "I had 100 NVIDIA Instant Replay clips and wanted a montage. Doing it by hand means scrubbing through every clip to find the kills, and doing it all again for every new video idea.",

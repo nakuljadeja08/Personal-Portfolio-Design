@@ -36,4 +36,6 @@ export const highlightsCopy = {
 };
 
 // Add a clip here and it replaces the empty line above.
-export const clips: Clip[] = [];
+export const clips: Clip[] = [
+  { title: "Best Of 2025 · VALORANT montage", href: "https://youtu.be/6dEzXrys0Pc" },
+];
